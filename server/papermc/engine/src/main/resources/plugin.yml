@@ -1,0 +1,6 @@
+name: MCEngineParticle
+version: ${version}
+main: io.github.mcengine.papermc.particle.engine.MCEngineParticlePaperMC
+author: MCEngine
+description: MCEngine Particle
+api-version: 1.13
