@@ -21,6 +21,20 @@ public class MCEngineParticlePaperMC extends JavaPlugin {
             return;
         }
 
+        // Load extensions
+        MCEngineApi.loadExtensions(
+            this,
+            "io.github.mcengine.api.particle.addon.IMCEngineParticleAddOn",
+            "addons",
+            "AddOn"
+            );
+        MCEngineApi.loadExtensions(
+            this,
+            "io.github.mcengine.api.particle.dlc.IMCEngineParticleDLC",
+            "dlcs",
+            "DLC"
+            );
+
         MCEngineApi.checkUpdate(this, getLogger(), "github", "MCEngine", "particle-engine", getConfig().getString("github.token", "null"));
     }
 
