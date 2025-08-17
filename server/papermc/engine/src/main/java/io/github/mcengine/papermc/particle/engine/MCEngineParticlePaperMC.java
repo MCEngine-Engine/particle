@@ -1,7 +1,7 @@
 package io.github.mcengine.papermc.particle.engine;
 
-import io.github.mcengine.api.mcengine.MCEngineApi;
-import io.github.mcengine.api.mcengine.Metrics;
+import io.github.mcengine.api.core.MCEngineCoreApi;
+import io.github.mcengine.api.core.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MCEngineParticlePaperMC extends JavaPlugin {
@@ -22,20 +22,20 @@ public class MCEngineParticlePaperMC extends JavaPlugin {
         }
 
         // Load extensions
-        MCEngineApi.loadExtensions(
+        MCEngineCoreApi.loadExtensions(
             this,
             "io.github.mcengine.api.particle.addon.IMCEngineParticleAddOn",
             "addons",
             "AddOn"
             );
-        MCEngineApi.loadExtensions(
+        MCEngineCoreApi.loadExtensions(
             this,
             "io.github.mcengine.api.particle.dlc.IMCEngineParticleDLC",
             "dlcs",
             "DLC"
             );
 
-        MCEngineApi.checkUpdate(this, getLogger(), "github", "MCEngine", "particle-engine", getConfig().getString("github.token", "null"));
+        MCEngineCoreApi.checkUpdate(this, getLogger(), "github", "MCEngine-Engine", "particle", getConfig().getString("github.token", "null"));
     }
 
     /**
