@@ -21,6 +21,15 @@ public class MCEngineParticlePaperMC extends JavaPlugin {
             return;
         }
 
+        String license = getConfig().getString("licenses.license", "free"); 
+        if (!license.equalsIgnoreCase("free")) { 
+            getLogger().warning("Plugin is disabled in config.yml.");
+            getLogger().warning("Invalid license.");
+            getLogger().warning("Check license or use \"free\".");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+
         // Load extensions
         MCEngineCoreApi.loadExtensions(
             this,
